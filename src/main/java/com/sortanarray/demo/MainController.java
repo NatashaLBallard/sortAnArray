@@ -9,17 +9,14 @@ import java.util.Arrays;
 public class MainController {
 
     @RequestMapping("/")
-    public String sortanarray ()
-    {
-        int[] arr = { 45, 87, 39, 32, 93, 86, 12, 44, 75, 50 };
+    public String sortanarray() {
+        int[] arr = {45, 87, 39, 32, 93, 86, 12, 44, 75, 50};
 
         // Display the original (unsorted values)
-
-        for ( int i=0; i<arr.length; i++ ) {
-            System.out.print( arr[i] + " " );
-            System.out.print("before: " + Arrays.toString(arr) );
-       }
-
+        System.out.print("before: ");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
 
         // Swap the values around to put them ascending order.
 		/*
@@ -35,20 +32,32 @@ public class MainController {
 		}
 		*/
 
-        //Display the values again, now (hopefully) sorted.
-       // System.out.print("after : ");
-      //  for ( int i=0; i<arr.length; i++ ) {
-       //     System.out.print( arr[i] + " " );
-       // System.out.println();}
+        // Display the values again, now (hopefully) sorted.
+        System.out.print("after : ");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
 
 
-
-        Arrays.sort(arr);
-
-        System.out.printf("Modified arr[] : ");
-                Arrays.toString(arr);
-
-        return  Arrays.toString(arr);
+        return "after : " + Arrays.toString(arr);
     }
-}
+
+        @RequestMapping("/arrays_sort")
+        public String arrays_sort ()
+        {
+            int[] arr = {45, 87, 39, 32, 93, 86, 12, 44, 75, 50};
+
+            Arrays.sort(arr);
+
+            System.out.printf("Modified arr[] : ");
+            Arrays.toString(arr);
+
+            return Arrays.toString(arr);
+
+        }
+
+
+    }
+
+
 
